@@ -1,0 +1,15 @@
+{
+  "name": "censure-price-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic price-experiment replay lab with shared inventory, censored demand, plan guardrails and as-of backtests.",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

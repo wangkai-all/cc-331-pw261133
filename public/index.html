@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>库存截断实验室 · 价格实验回放</title>
+    <meta
+      name="description"
+      content="按渠道独立估计还是联合处理共享库存：一个可回放的价格实验沙盘。"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1117'/%3E%3Cpath d='M8 21l5-8 4 5 3-4 4 7' stroke='%237dd3c0' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26">
+              <path d="M7 21l5-8 4 5 3-4 5 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <strong>截断实验室</strong>
+            <span>Price × Censoring Lab</span>
+          </div>
+        </div>
+        <nav class="nav" id="nav" aria-label="主导航">
+          <a href="#console" data-view="console" class="nav-item">
+            <span class="nav-ico" data-icon="pulse"></span><span>回放台</span>
+          </a>
+          <a href="#lab" data-view="lab" class="nav-item">
+            <span class="nav-ico" data-icon="sliders"></span><span>方案实验室</span>
+          </a>
+          <a href="#results" data-view="results" class="nav-item">
+            <span class="nav-ico" data-icon="chart"></span><span>结果与识别</span>
+          </a>
+          <a href="#orders" data-view="orders" class="nav-item">
+            <span class="nav-ico" data-icon="list"></span><span>逐单日志</span>
+          </a>
+          <a href="#method" data-view="method" class="nav-item">
+            <span class="nav-ico" data-icon="book"></span><span>方法说明</span>
+          </a>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="mini-stat" id="side-day">
+            <span class="mini-label">回放进度</span>
+            <span class="mini-value">—</span>
+          </div>
+          <div class="offline-badge"><span class="dot"></span>本地虚构数据 · 无外部连接</div>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <div class="clock" id="clock">
+              <span class="clock-day">第 1 天</span>
+              <span class="clock-hour">09:00</span>
+            </div>
+            <div class="scenario-chip" id="scenario-chip">—</div>
+            <div class="applied-chip" id="applied-chip">—</div>
+          </div>
+          <div class="topbar-actions" id="topbar-actions"></div>
+        </header>
+        <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+        <main class="content" id="content" tabindex="-1"></main>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="drawer" id="drawer" hidden aria-label="详情"></aside>
+    <div class="modal-backdrop" id="modal-backdrop" hidden></div>
+    <div class="modal" id="modal" hidden role="dialog" aria-modal="true"></div>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
